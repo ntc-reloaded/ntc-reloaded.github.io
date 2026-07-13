@@ -1,0 +1,811 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NTC-R 2026 — Network Traffic Classification Reloaded</title>
+  <meta name="description" content="NTC-R 2026 is a one-day workshop co-located with ACM CoNEXT 2026 in Utrecht, dedicated to a rigorous, reproducibility-focused reassessment of network traffic classification research.">
+  <meta property="og:title" content="NTC-R 2026 — Network Traffic Classification Reloaded">
+  <meta property="og:description" content="A one-day workshop co-located with ACM CoNEXT 2026 · Utrecht, The Netherlands · December 2026.">
+  <meta property="og:type" content="website">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,300;0,14..32,400;0,14..32,500;0,14..32,600;0,14..32,700;0,14..32,800;1,14..32,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/styles.css">
+  <link rel="icon" href="assets/img/favicon.ico" sizes="any">
+  <link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg">
+  <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
+  <link rel="manifest" href="assets/img/site.webmanifest">
+  <meta name="theme-color" content="#0f1f3d">
+</head>
+<body>
+
+  <!-- ════════════════════════════════════════
+       STICKY NAV
+  ════════════════════════════════════════ -->
+  <header class="site-header" id="top">
+    <nav class="nav" aria-label="Main navigation">
+      <a class="nav__brand" href="#top" aria-label="NTC-R 2026 — back to top">NTC-R <span>2026</span></a>
+      <button class="nav__toggle"
+              aria-expanded="false"
+              aria-controls="nav-menu"
+              aria-label="Toggle navigation menu">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav__menu" id="nav-menu" role="list">
+        <li><a href="#about">About</a></li>
+        <li><a href="#topics">Topics</a></li>
+        <li><a href="#dates">Dates</a></li>
+        <li><a href="#program">Program</a></li>
+        <li><a href="#keynote">Keynote</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+
+    <!-- ════════════════════════════════════════
+         1. HERO
+    ════════════════════════════════════════ -->
+    <section id="hero" class="hero" aria-labelledby="hero-title">
+      <!-- Decorative network-constellation backdrop (navy/amber, behind the text) -->
+      <svg class="hero__bg hero__bg--wide" viewBox="0 0 1200 600" preserveAspectRatio="xMidYMid slice"
+           aria-hidden="true" focusable="false">
+        <g class="hero__bg-glows">
+          <circle class="hero__bg-glow" cx="240" cy="80"  r="10"/>
+          <circle class="hero__bg-glow" cx="360" cy="170" r="10"/>
+          <circle class="hero__bg-glow" cx="1010" cy="260" r="10"/>
+          <circle class="hero__bg-glow" cx="900" cy="400" r="10"/>
+        </g>
+        <g class="hero__bg-edges">
+          <line x1="110" y1="120" x2="240"  y2="80"/>
+          <line x1="110" y1="120" x2="190"  y2="230"/>
+          <line x1="240" y1="80"  x2="360"  y2="170"/>
+          <line x1="190" y1="230" x2="360"  y2="170"/>
+          <line x1="190" y1="230" x2="270"  y2="380"/>
+          <line x1="80"  y1="340" x2="190"  y2="230"/>
+          <line x1="80"  y1="340" x2="270"  y2="380"/>
+          <line x1="80"  y1="340" x2="150"  y2="500"/>
+          <line x1="270" y1="380" x2="380"  y2="470"/>
+          <line x1="150" y1="500" x2="380"  y2="470"/>
+          <line x1="270" y1="380" x2="360"  y2="170"/>
+          <line x1="980" y1="100" x2="1120" y2="150"/>
+          <line x1="980" y1="100" x2="1010" y2="260"/>
+          <line x1="1120" y1="150" x2="1010" y2="260"/>
+          <line x1="1010" y1="260" x2="1130" y2="330"/>
+          <line x1="1120" y1="150" x2="1130" y2="330"/>
+          <line x1="1010" y1="260" x2="900"  y2="400"/>
+          <line x1="900" y1="400" x2="1080" y2="440"/>
+          <line x1="1130" y1="330" x2="1080" y2="440"/>
+          <line x1="1080" y1="440" x2="1150" y2="520"/>
+          <line x1="1130" y1="330" x2="1150" y2="520"/>
+          <line x1="900" y1="400" x2="950"  y2="540"/>
+          <line x1="1080" y1="440" x2="950"  y2="540"/>
+        </g>
+        <g class="hero__bg-edges hero__bg-edges--faint">
+          <line x1="360" y1="170" x2="560"  y2="90"/>
+          <line x1="560" y1="90"  x2="980"  y2="100"/>
+          <line x1="150" y1="500" x2="660"  y2="540"/>
+          <line x1="660" y1="540" x2="900"  y2="400"/>
+        </g>
+        <g class="hero__bg-nodes">
+          <circle class="hero__bg-node--twinkle" cx="110" cy="120" r="3" style="animation-delay:0s"/>
+          <circle class="hero__bg-node--hub" cx="240" cy="80" r="4.5"/>
+          <circle cx="190" cy="230" r="3"/>
+          <circle class="hero__bg-node--hub hero__bg-node--twinkle" cx="360" cy="170" r="4.5" style="animation-delay:2.4s"/>
+          <circle cx="80"  cy="340" r="3"/>
+          <circle class="hero__bg-node--twinkle" cx="270" cy="380" r="3" style="animation-delay:3.6s"/>
+          <circle cx="150" cy="500" r="3"/>
+          <circle cx="380" cy="470" r="3"/>
+          <circle cx="560" cy="90"  r="2.5"/>
+          <circle class="hero__bg-node--twinkle" cx="980" cy="100" r="3" style="animation-delay:1.2s"/>
+          <circle cx="1120" cy="150" r="3"/>
+          <circle class="hero__bg-node--hub hero__bg-node--twinkle" cx="1010" cy="260" r="4.5" style="animation-delay:4.2s"/>
+          <circle cx="1130" cy="330" r="3"/>
+          <circle class="hero__bg-node--hub" cx="900" cy="400" r="4.5"/>
+          <circle class="hero__bg-node--twinkle" cx="1080" cy="440" r="3" style="animation-delay:1.8s"/>
+          <circle cx="1150" cy="520" r="3"/>
+          <circle cx="950" cy="540" r="3"/>
+          <circle cx="660" cy="540" r="2.5"/>
+        </g>
+      </svg>
+      <!-- Portrait-tuned constellation, shown on narrow screens only -->
+      <svg class="hero__bg hero__bg--portrait" viewBox="0 0 480 760" preserveAspectRatio="xMidYMid slice"
+           aria-hidden="true" focusable="false">
+        <g class="hero__bg-glows">
+          <circle class="hero__bg-glow" cx="200" cy="60"  r="10"/>
+          <circle class="hero__bg-glow" cx="330" cy="120" r="10"/>
+          <circle class="hero__bg-glow" cx="360" cy="470" r="10"/>
+          <circle class="hero__bg-glow" cx="250" cy="600" r="10"/>
+        </g>
+        <g class="hero__bg-edges">
+          <line x1="70"  y1="90"  x2="200" y2="60"/>
+          <line x1="70"  y1="90"  x2="130" y2="180"/>
+          <line x1="200" y1="60"  x2="330" y2="120"/>
+          <line x1="330" y1="120" x2="410" y2="210"/>
+          <line x1="130" y1="180" x2="60"  y2="320"/>
+          <line x1="130" y1="180" x2="150" y2="430"/>
+          <line x1="60"  y1="320" x2="150" y2="430"/>
+          <line x1="330" y1="120" x2="360" y2="470"/>
+          <line x1="410" y1="210" x2="420" y2="360"/>
+          <line x1="420" y1="360" x2="360" y2="470"/>
+          <line x1="60"  y1="320" x2="90"  y2="560"/>
+          <line x1="150" y1="430" x2="250" y2="600"/>
+          <line x1="360" y1="470" x2="410" y2="630"/>
+          <line x1="90"  y1="560" x2="250" y2="600"/>
+          <line x1="250" y1="600" x2="180" y2="690"/>
+          <line x1="410" y1="630" x2="330" y2="720"/>
+          <line x1="250" y1="600" x2="360" y2="470"/>
+        </g>
+        <g class="hero__bg-edges hero__bg-edges--faint">
+          <line x1="200" y1="60"  x2="410" y2="210"/>
+          <line x1="150" y1="430" x2="360" y2="470"/>
+          <line x1="180" y1="690" x2="410" y2="630"/>
+        </g>
+        <g class="hero__bg-nodes">
+          <circle class="hero__bg-node--twinkle" cx="70"  cy="90"  r="3" style="animation-delay:0s"/>
+          <circle class="hero__bg-node--hub" cx="200" cy="60" r="4.5"/>
+          <circle cx="130" cy="180" r="3"/>
+          <circle class="hero__bg-node--hub hero__bg-node--twinkle" cx="330" cy="120" r="4.5" style="animation-delay:2.4s"/>
+          <circle cx="410" cy="210" r="3"/>
+          <circle cx="60"  cy="320" r="3"/>
+          <circle class="hero__bg-node--twinkle" cx="420" cy="360" r="3" style="animation-delay:1.2s"/>
+          <circle cx="150" cy="430" r="3"/>
+          <circle class="hero__bg-node--hub hero__bg-node--twinkle" cx="360" cy="470" r="4.5" style="animation-delay:4.2s"/>
+          <circle cx="90"  cy="560" r="3"/>
+          <circle class="hero__bg-node--hub" cx="250" cy="600" r="4.5"/>
+          <circle class="hero__bg-node--twinkle" cx="410" cy="630" r="3" style="animation-delay:1.8s"/>
+          <circle cx="180" cy="690" r="3"/>
+          <circle cx="330" cy="720" r="2.5"/>
+        </g>
+      </svg>
+      <div class="container">
+        <img class="hero__sponsor-logo" src="assets/img/acm-logo.svg"
+             alt="Association for Computing Machinery (ACM)" width="64" height="64">
+        <p class="hero__badge" aria-label="Co-location details">
+          Co-located with ACM CoNEXT 2026 &middot; Utrecht, The Netherlands &middot; December 2026
+        </p>
+        <h1 class="hero__title" id="hero-title">
+          Network Traffic Classification <span>&ndash; Reloaded</span>
+        </h1>
+        <p class="hero__acronym">NTC-R 2026</p>
+        <p class="hero__tagline">Rigorous. Reproducible. Reloaded.</p>
+        <p class="hero__sub">
+          Network traffic classification is our flagship scenario for a broader question:
+          How do we build trustworthy, reproducible AI for networking? 
+        </p>
+        <div class="hero__ctas">
+          <a href="#submit" class="btn btn--amber">Submit a Paper</a>
+          <a href="#dates" class="btn btn--outline">Important Dates</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ════════════════════════════════════════
+         2. ABOUT / SCOPE
+    ════════════════════════════════════════ -->
+
+  <section id="about" class="section" aria-labelledby="about-title">
+    <div class="container">
+      <header class="section__header reveal">
+        <span class="section__label">About</span>
+        <h2 class="section__title" id="about-title">Why NTC-R?</h2>
+        <p class="section__lead">
+          A <strong>timely and necessary</strong> reassessment of network traffic classification.
+        </p>
+      </header>
+
+      <div class="about__grid">
+        <div class="about__body reveal">
+          <p>
+            Internet traffic classification has been a central topic in networking for more than two
+            decades. It has evolved from traffic engineering, QoS, and application-aware management
+            to encrypted traffic analysis, machine learning, and, more recently, AI-based approaches
+            inspired by large language and foundation models.
+          </p>
+
+          <p>
+            Recent studies, however, have revealed major methodological weaknesses, particularly in
+            representation learning for encrypted traffic. Reported improvements often arise from
+            dataset leakage, shortcut learning, or unrealistic evaluation settings, raising doubts
+            about whether models learn meaningful traffic properties or merely capture spurious
+            correlations.
+          </p>
+
+          <p>
+            At the same time, the field still lacks widely accepted tasks, benchmarks, standardized
+            datasets, and reproducible evaluation practices. Fragmented datasets, inconsistent
+            pipelines, and limited reproducibility continue to slow scientific progress.
+          </p>
+
+          <p>
+            NTC-R 2026 brings together researchers from networking, machine learning, security, and
+            systems to reassess the state of the art and help define a research agenda grounded in
+            rigor, reproducibility, and realistic deployment assumptions.
+          </p>
+
+          <p>
+            Traffic classification is our flagship scenario, but the questions it raises -
+            trustworthy evaluation, reproducibility, and robustness to shortcuts - cut across
+            networking as a whole. We therefore warmly welcome contributions that carry lessons from
+            adjacent problems in computer networks and, more broadly, from <strong>trustworthy AI for
+            networking</strong>, wherever they sharpen how the community measures genuine progress.
+          </p>
+        </div>
+
+        <div class="about__callout reveal" aria-label="Workshop motivation highlight">
+          <p class="about__callout-label">Missing &ldquo;ImageNet for NTC&rdquo;</p>
+
+          <p>
+            The research community still lacks a shared dataset and a common set of tasks on which
+            different proposals can be fairly compared and tested. Without shared benchmarks,
+            evaluation pipelines, and best practices, it remains difficult to distinguish genuine
+            progress from results that exploit dataset artefacts or unrealistic assumptions.
+          </p>
+
+          <p>
+            Rather than focusing on incremental performance gains, NTC-R 2026 promotes a rigorous
+            scientific discussion on evaluation methodology, benchmarking, reproducibility,
+            trustworthy AI for traffic classification, and representation learning approaches
+            grounded in networking knowledge.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+    <!-- ════════════════════════════════════════
+         3. TOPICS OF INTEREST
+    ════════════════════════════════════════ -->
+    <section id="topics" class="section section--alt" aria-labelledby="topics-title">
+      <div class="container">
+        <header class="section__header reveal">
+          <span class="section__label">Call for Papers</span>
+          <h2 class="section__title" id="topics-title">Topics of Interest</h2>
+          <p class="section__lead">
+            The workshop solicits original research papers, measurement studies, system papers,
+            position papers, reproducibility studies, benchmark contributions, and negative
+            results centered on Network Traffic Classification - and, more broadly, on
+            trustworthy and reproducible AI for networking. Topics include, but are not
+            limited to:
+          </p>
+        </header>
+        <div class="topics__grid reveal" role="list" aria-label="Topics of interest">
+          <div class="topic-card" role="listitem">
+            <span class="topic-card__dot" aria-hidden="true"></span>
+            Benchmarking methodologies and reproducibility
+          </div>
+          <div class="topic-card" role="listitem">
+            <span class="topic-card__dot" aria-hidden="true"></span>
+            Open datasets and traffic traces
+          </div>
+          <div class="topic-card" role="listitem">
+            <span class="topic-card__dot" aria-hidden="true"></span>
+            Analysis of biases in existing datasets
+          </div>
+          <div class="topic-card" role="listitem">
+            <span class="topic-card__dot" aria-hidden="true"></span>
+            Detection and mitigation of shortcut learning
+          </div>
+          <div class="topic-card" role="listitem">
+            <span class="topic-card__dot" aria-hidden="true"></span>
+            Encrypted traffic classification
+          </div>
+          <div class="topic-card" role="listitem">
+            <span class="topic-card__dot" aria-hidden="true"></span>
+            Foundation models and LLM-inspired approaches for networking
+          </div>
+          <div class="topic-card" role="listitem">
+            <span class="topic-card__dot" aria-hidden="true"></span>
+            Explainable and interpretable traffic classification
+          </div>
+          <div class="topic-card" role="listitem">
+            <span class="topic-card__dot" aria-hidden="true"></span>
+            Lightweight and deployable ML solutions
+          </div>
+          <div class="topic-card" role="listitem">
+            <span class="topic-card__dot" aria-hidden="true"></span>
+            Adversarial robustness and evasion resistance
+          </div>
+          <div class="topic-card" role="listitem">
+            <span class="topic-card__dot" aria-hidden="true"></span>
+            Measurement studies and operational experience
+          </div>
+          <div class="topic-card" role="listitem">
+            <span class="topic-card__dot" aria-hidden="true"></span>
+            Reproducibility reports and artifact evaluation
+          </div>
+          <div class="topic-card" role="listitem">
+            <span class="topic-card__dot" aria-hidden="true"></span>
+            Negative results and lessons learned
+          </div>
+          <div class="topic-card" role="listitem">
+            <span class="topic-card__dot" aria-hidden="true"></span>
+            Shortcut-robust approaches for network traffic classification
+          </div>
+          <div class="topic-card" role="listitem">
+            <span class="topic-card__dot" aria-hidden="true"></span>
+            Lessons from trustworthy AI in adjacent networking problems
+          </div>
+          <div class="topic-card" role="listitem">
+            <span class="topic-card__dot" aria-hidden="true"></span>
+            Evaluation and benchmarking across networking ML tasks
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ════════════════════════════════════════
+         4. IMPORTANT DATES
+    ════════════════════════════════════════ -->
+    <section id="dates" class="section" aria-labelledby="dates-title">
+      <div class="container">
+        <header class="section__header reveal">
+          <span class="section__label">Timeline</span>
+          <h2 class="section__title" id="dates-title">Important Dates</h2>
+          <p class="section__lead">All deadlines are Anywhere on Earth (AoE).</p>
+        </header>
+        <div class="dates-timeline reveal" role="list" aria-label="Important dates">
+
+          <div class="dates-timeline__item" role="listitem">
+            <div class="dates-timeline__dot-col" aria-hidden="true">
+              <div class="dates-timeline__dot"></div>
+            </div>
+            <div class="dates-timeline__body">
+              <div class="dates-timeline__date">20 July 2026</div>
+              <div class="dates-timeline__label">Paper Registration Deadline</div>
+              <div class="dates-timeline__note">Register your paper (title and abstract).</div>
+            </div>
+          </div>
+
+          <div class="dates-timeline__item" role="listitem">
+            <div class="dates-timeline__dot-col" aria-hidden="true">
+              <div class="dates-timeline__dot"></div>
+            </div>
+            <div class="dates-timeline__body">
+              <div class="dates-timeline__date">24 July 2026</div>
+              <div class="dates-timeline__label">Paper Submission Deadline</div>
+              <div class="dates-timeline__note">Final deadline to upload the full paper.</div>
+            </div>
+          </div>
+
+          <div class="dates-timeline__item" role="listitem">
+            <div class="dates-timeline__dot-col" aria-hidden="true">
+              <div class="dates-timeline__dot"></div>
+            </div>
+            <div class="dates-timeline__body">
+              <div class="dates-timeline__date">30 August 2026</div>
+              <div class="dates-timeline__label">Acceptance Notification</div>
+            </div>
+          </div>
+
+          <div class="dates-timeline__item" role="listitem">
+            <div class="dates-timeline__dot-col" aria-hidden="true">
+              <div class="dates-timeline__dot"></div>
+            </div>
+            <div class="dates-timeline__body">
+              <div class="dates-timeline__date">25 September 2026</div>
+              <div class="dates-timeline__label">Camera-Ready Due</div>
+            </div>
+          </div>
+
+          <div class="dates-timeline__item" role="listitem">
+            <div class="dates-timeline__dot-col" aria-hidden="true">
+              <div class="dates-timeline__dot"></div>
+            </div>
+            <div class="dates-timeline__body">
+              <div class="dates-timeline__date">15 October 2026</div>
+              <div class="dates-timeline__label">Program Available Online</div>
+            </div>
+          </div>
+
+          <div class="dates-timeline__item" role="listitem">
+            <div class="dates-timeline__dot-col" aria-hidden="true">
+              <div class="dates-timeline__dot dates-timeline__dot--tba"></div>
+            </div>
+            <div class="dates-timeline__body">
+              <div class="dates-timeline__date dates-timeline__date--tba">
+                TBA &mdash; within 7&ndash;11 December 2026
+              </div>
+              <div class="dates-timeline__label dates-timeline__label--tba">Workshop Day</div>
+              <div class="dates-timeline__note">Co-located with ACM CoNEXT 2026, Utrecht, The Netherlands</div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ════════════════════════════════════════
+         5. SUBMISSION INSTRUCTIONS
+    ════════════════════════════════════════ -->
+    <section id="submit" class="section section--alt" aria-labelledby="submit-title">
+      <div class="container">
+        <header class="section__header reveal">
+          <span class="section__label">Submissions</span>
+          <h2 class="section__title" id="submit-title">Submission Instructions</h2>
+          <p class="section__lead">
+            NTC-R 2026 adopts a <strong>double-blind peer review</strong> process.
+            Submissions on traffic classification are our core focus, and we equally welcome work
+            from adjacent networking problems that advances trustworthy, reproducible AI for the
+            field. Authors are strongly encouraged to release all supporting materials alongside
+            their submissions.
+          </p>
+        </header>
+        <div class="submit__grid reveal">
+          <div class="submit__card">
+            <h3>Paper Format</h3>
+            <ul>
+              <li><span>At most <strong>five (5) pages</strong>, excluding references and appendix</span></li>
+              <li>Two-column, 10pt ACM format</li>
+              <li><span><b>Double-blind:</b> make sure to preserve anonymity</span></li>
+              <li><span>LaTeX users: <a href="https://www.overleaf.com/latex/templates/acm-conference-proceedings-primary-article-template/wbvnghjbzwpc" target="_blank" rel="noopener">ACM conference proceedings template</a></span></li>
+            </ul>
+          </div>
+          <div class="submit__card">
+            <h3>Open Science Encouraged</h3>
+            <ul>
+              <li>Code and software artifacts</li>
+              <li>Datasets and traffic traces</li>
+              <li>Experimental artifacts</li>
+              <li>Reproducibility instructions</li>
+            </ul>
+            <p class="note">
+              Releasing    materials is not required for acceptance, but strongly
+              encouraged in the spirit of reproducible research.
+            </p>
+          </div>
+        </div>
+        <p class="submit__pubs reveal">
+          Authors of accepted papers are expected to present their work at the workshop. 
+          Accepted papers will appear in the
+          <a href="https://dl.acm.org/" target="_blank" rel="noopener">ACM Digital Library</a>.
+        </p>
+        <div class="submit__portal reveal">
+          <div class="submit__portal-text">
+            <strong>Submissions are handled via HotCRP.</strong>
+            Prepare your paper following the format above, then submit through the portal.
+          </div>
+          <a href="https://ntc-r-2026.hotcrp.com/" class="btn btn--amber"
+             target="_blank" rel="noopener">Submit on HotCRP &rarr;</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ════════════════════════════════════════
+         6. PROGRAM / FORMAT
+    ════════════════════════════════════════ -->
+    <section id="program" class="section" aria-labelledby="program-title">
+      <div class="container">
+        <header class="section__header reveal">
+          <span class="section__label">Program</span>
+          <h2 class="section__title" id="program-title">Workshop Format</h2>
+          <p class="section__lead">
+            NTC-R 2026 is planned as a one-day event. The accepted-paper program will be
+            published online on 15 October 2026.
+          </p>
+        </header>
+        <div class="program__sessions reveal">
+
+          <div class="session">
+            <div class="session__icon" aria-hidden="true">🎤</div>
+            <div class="session__body">
+              <h3>Opening &amp; Invited Keynote</h3>
+              <p>Setting the scene: twenty years of network traffic classification, what went
+              wrong, and where the field goes from here.</p>
+            </div>
+          </div>
+
+          <div class="session">
+            <div class="session__icon" aria-hidden="true">📄</div>
+            <div class="session__body">
+              <h3>Technical Paper Sessions</h3>
+              <p>Presentations of accepted regular, short, position, and
+              reproducibility/benchmark papers.</p>
+            </div>
+          </div>
+
+          <div class="session">
+            <div class="session__icon" aria-hidden="true">🔬</div>
+            <div class="session__body">
+              <h3>Panel: &ldquo;What Went Wrong in Traffic Classification Research?&rdquo;</h3>
+              <p>A structured debate on evaluation flaws, shortcut learning, dataset leakage,
+              and methodological blind spots in the literature.</p>
+            </div>
+          </div>
+
+          <div class="session">
+            <div class="session__icon" aria-hidden="true">📊</div>
+            <div class="session__body">
+              <h3>Benchmarking &amp; Reproducibility Discussion</h3>
+              <p>Community-wide conversation on open datasets, shared benchmarks, and
+              reproducibility standards for traffic classification.</p>
+            </div>
+          </div>
+
+          <div class="session">
+            <div class="session__icon" aria-hidden="true">🔭</div>
+            <div class="session__body">
+              <h3>Closing: Future Research Directions</h3>
+              <p>Open discussion on the next research agenda for rigorous, reproducible, and
+              practically relevant network traffic classification.</p>
+            </div>
+          </div>
+
+        </div>
+        <p class="program__note reveal">
+          The detailed schedule with accepted papers will be published online on 15 October 2026.<br>
+          Artifact submissions, public dataset releases, and reproducibility challenges are
+          explicitly encouraged.
+        </p>
+      </div>
+    </section>
+
+    <!-- ════════════════════════════════════════
+         7. KEYNOTE
+    ════════════════════════════════════════ -->
+    <section id="keynote" class="section section--alt" aria-labelledby="keynote-title">
+      <div class="container">
+        <header class="section__header reveal">
+          <span class="section__label">Keynote</span>
+          <h2 class="section__title" id="keynote-title">Invited Speaker</h2>
+        </header>
+        <div class="keynote__tba reveal">
+          <div class="keynote__icon" aria-hidden="true">🎙️</div>
+          <h3>To Be Announced</h3>
+          <p>
+            The keynote speaker will be announced once confirmed. NTC-R 2026 will feature an
+            invited talk from a leading researcher working at the intersection of internet
+            traffic analysis, machine learning for networking, and reproducible evaluation.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ════════════════════════════════════════
+         8. ORGANIZERS
+    ════════════════════════════════════════ -->
+    <section id="organizers" class="section" aria-labelledby="organizers-title">
+      <div class="container">
+        <header class="section__header reveal">
+          <span class="section__label">Team</span>
+          <h2 class="section__title" id="organizers-title">Organizers</h2>
+        </header>
+
+        <div class="org-group reveal">
+          <div class="org-group__label" id="steering-label">Steering Committee</div>
+          <div class="org-cards" aria-labelledby="steering-label">
+            <div class="org-card">
+              <div class="org-card__name">Marco Mellia</div>
+              <div class="org-card__affil">Politecnico di Torino, Italy</div>
+            </div>
+            <div class="org-card">
+              <div class="org-card__name">Dario Rossi</div>
+              <div class="org-card__affil">Huawei Technologies, France</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="org-group reveal">
+          <div class="org-group__label" id="chairs-label">Program Chairs</div>
+          <div class="org-cards" aria-labelledby="chairs-label">
+            <div class="org-card">
+              <div class="org-card__name">Matteo Boffa</div>
+              <div class="org-card__affil">Politecnico di Torino, Italy</div>
+            </div>
+            <div class="org-card">
+              <div class="org-card__name">Francesco Bronzino</div>
+              <div class="org-card__affil">ENS de Lyon, France</div>
+            </div>
+            <div class="org-card">
+              <div class="org-card__name">Paul Schmitt</div>
+              <div class="org-card__affil">Cal Poly, USA</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="org-group reveal">
+          <div class="org-group__label" id="tpc-label">Technical Program Committee</div>
+          <div class="org-cards" aria-labelledby="tpc-label">
+            <div class="org-card">
+              <div class="org-card__name">Aristide Tanyi-Jong Akem</div>
+              <div class="org-card__affil">University of Southampton, UK</div>
+            </div>
+            <div class="org-card">
+              <div class="org-card__name">Giovanni Apruzzese</div>
+              <div class="org-card__affil">Reykjavik University, Iceland</div>
+            </div>
+            <div class="org-card">
+              <div class="org-card__name">Levente Csikor</div>
+              <div class="org-card__affil">A*STAR, Singapore</div>
+            </div>
+            <div class="org-card">
+              <div class="org-card__name">Nick Feamster</div>
+              <div class="org-card__affil">University of Chicago, USA</div>
+            </div>
+            <div class="org-card">
+              <div class="org-card__name">Claudio Fiandrino</div>
+              <div class="org-card__affil">IMDEA Networks Institute, Spain</div>
+            </div>
+            <div class="org-card">
+              <div class="org-card__name">Alessandro Finamore</div>
+              <div class="org-card__affil">Huawei Technologies, France</div>
+            </div>
+            <div class="org-card">
+              <div class="org-card__name">Arpit Gupta</div>
+              <div class="org-card__affil">UC Santa Barbara, USA</div>
+            </div>
+            <div class="org-card">
+              <div class="org-card__name">Prankur Gupta</div>
+              <div class="org-card__affil">Meta, USA</div>
+            </div>
+            <div class="org-card">
+              <div class="org-card__name">Minzhao Lyu</div>
+              <div class="org-card__affil">University of New South Wales, Australia</div>
+            </div>
+            <div class="org-card">
+              <div class="org-card__name">Paul Patras</div>
+              <div class="org-card__affil">University of Edinburgh, UK</div>
+            </div>
+            <div class="org-card">
+              <div class="org-card__name">Valerio Persico</div>
+              <div class="org-card__affil">University of Naples Federico II, Italy</div>
+            </div>
+            <div class="org-card">
+              <div class="org-card__name">Adrien Schoen</div>
+              <div class="org-card__affil">CNRS, France</div>
+            </div>
+            <div class="org-card">
+              <div class="org-card__name">Walter Willinger</div>
+              <div class="org-card__affil">NIKSUN, USA</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ════════════════════════════════════════
+         9. VENUE & TRAVEL
+    ════════════════════════════════════════ -->
+    <section id="venue" class="section section--alt" aria-labelledby="venue-title">
+      <div class="container">
+        <header class="section__header reveal">
+          <span class="section__label">Venue &amp; Travel</span>
+          <h2 class="section__title" id="venue-title">Utrecht, The Netherlands</h2>
+        </header>
+        <div class="venue__content">
+          <div class="venue__text reveal">
+            <p>
+              NTC-R 2026 is co-located with <strong>ACM CoNEXT 2026</strong>, held in
+              Utrecht, The Netherlands, 7&ndash;11 December 2026. The exact workshop day
+              within that window is to be announced.
+            </p>
+            <p>
+              Utrecht is easily accessible from Amsterdam Schiphol Airport (30 min by train)
+              and sits at the heart of the Dutch rail network.
+            </p>
+            <p>
+              For full venue details, accommodation options, and visa information, please
+              refer to the main conference website.
+            </p>
+            <p class="venue__link">
+              <a href="https://conferences.sigcomm.org/co-next/2026/"
+                 target="_blank" rel="noopener noreferrer">
+                ACM CoNEXT 2026 &mdash; Venue &amp; Travel &rarr;
+              </a>
+            </p>
+          </div>
+          <div class="venue__map reveal">
+            <iframe
+              src="https://www.openstreetmap.org/export/embed.html?bbox=5.05%2C52.06%2C5.18%2C52.13&amp;layer=mapnik&amp;marker=52.0907%2C5.1214"
+              title="Utrecht, The Netherlands — OpenStreetMap"
+              loading="lazy"
+              allowfullscreen></iframe>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ════════════════════════════════════════
+         10. REGISTRATION
+    ════════════════════════════════════════ -->
+    <section id="registration" class="section" aria-labelledby="registration-title">
+      <div class="container">
+        <header class="section__header reveal">
+          <span class="section__label">Registration</span>
+          <h2 class="section__title" id="registration-title">How to Register</h2>
+        </header>
+        <p class="registration__body reveal">
+          Workshop registration is handled through ACM CoNEXT 2026. Registering for the main
+          conference grants access to all co-located workshops including NTC-R 2026.
+          Registration will open via the CoNEXT 2026 website.
+        </p>
+        <div class="reveal">
+          <a href="https://conferences.sigcomm.org/co-next/2026/"
+             target="_blank" rel="noopener noreferrer"
+             class="btn btn--outline-navy">
+            Register via ACM CoNEXT 2026 &rarr;
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ════════════════════════════════════════
+         11. CONTACT
+    ════════════════════════════════════════ -->
+    <section id="contact" class="section section--dark" aria-labelledby="contact-title">
+      <div class="container">
+        <header class="section__header reveal">
+          <span class="section__label">Contact</span>
+          <h2 class="section__title" id="contact-title">Get in Touch</h2>
+          <p class="section__lead">
+            For questions about submissions, the program, or the workshop in general,
+            reach out to the Program Chairs.
+          </p>
+        </header>
+        <div class="contact__chairs reveal">
+          <div class="contact-card">
+            <div class="contact-card__name">Matteo Boffa</div>
+            <div class="contact-card__role">Program Chair</div>
+            <div class="contact-card__affil">Politecnico di Torino, Italy</div>
+            <a href="mailto:matteo.boffa@polito.it" class="contact-card__email">
+              matteo.boffa@polito.it
+            </a>
+          </div>
+          <div class="contact-card">
+            <div class="contact-card__name">Francesco Bronzino</div>
+            <div class="contact-card__role">Program Chair</div>
+            <div class="contact-card__affil">ENS de Lyon, France</div>
+            <a href="mailto:francesco.bronzino@ens-lyon.fr" class="contact-card__email">
+              francesco.bronzino@ens-lyon.fr
+            </a>
+          </div>
+          <div class="contact-card">
+            <div class="contact-card__name">Paul Schmitt</div>
+            <div class="contact-card__role">Program Chair</div>
+            <div class="contact-card__affil">Cal Poly, USA</div>
+            <a href="mailto:prs@calpoly.edu" class="contact-card__email">
+              prs@calpoly.edu
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ════════════════════════════════════════
+       FOOTER
+  ════════════════════════════════════════ -->
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer__inner">
+        <div class="footer__logos" aria-label="Affiliated institutions and sponsors">
+          <!-- TODO: replace remaining text slots with real logo files once provided -->
+          <img class="footer__logo-img" src="assets/img/acm-logo.svg"
+               alt="Association for Computing Machinery (ACM)" width="36" height="36" loading="lazy">
+          <div class="footer__logo-slot" title="ACM CoNEXT 2026">CoNEXT 2026</div>
+          <div class="footer__logo-slot" title="Politecnico di Torino">PoliTo</div>
+          <div class="footer__logo-slot" title="Huawei Technologies">Huawei</div>
+          <div class="footer__logo-slot" title="ENS de Lyon">ENS Lyon</div>
+          <div class="footer__logo-slot" title="Cal Poly">Cal Poly</div>
+        </div>
+        <div class="footer__meta">
+          <p>
+            NTC-R 2026 &mdash; Co-located with
+            <a href="https://conferences.sigcomm.org/co-next/2026/"
+               target="_blank" rel="noopener noreferrer">ACM CoNEXT 2026</a><br>
+            Sponsored by ACM SIGCOMM &middot;
+            &copy; 2026 NTC-R Organizers
+          </p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

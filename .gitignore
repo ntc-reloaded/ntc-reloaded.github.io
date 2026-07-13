@@ -1,0 +1,12 @@
+# Internal guidance & source material — never commit (see CLAUDE.md §7)
+CLAUDE.md
+raw/
+
+# Secrets
+.env
+
+# OS / editor junk
+.DS_Store
+*.log
+.vscode/
+.idea/
